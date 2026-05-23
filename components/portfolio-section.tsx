@@ -28,7 +28,7 @@ const categories = [
     tag: "生活",
     icon: Sunset,
     color: "#4CAF50",
-    image: "/images/portfolio/life/4.png",
+    image: "/images/portfolio/life/4.webp",
   },
 ]
 
