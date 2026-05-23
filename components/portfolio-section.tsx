@@ -1,4 +1,4 @@
-import { ArrowRight, Video, Sunset, Briefcase } from "lucide-react"
+import { ArrowRight, Video, Sunset, Briefcase, Search } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -177,7 +177,7 @@ export function PortfolioSection() {
           </Link>
         </div>
 
-        <div className="flex justify-center">
+        <div className="flex justify-center gap-4 flex-wrap">
           <Link
             href="/portfolio"
             className="bg-black text-white px-6 md:px-8 py-4 md:py-5 rounded-[12px] font-semibold hover:bg-gray-900 transition-colors flex items-center justify-center gap-2 w-full sm:w-auto text-sm md:text-base border-[3px] border-black hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5"
@@ -196,6 +196,13 @@ export function PortfolioSection() {
               />
             </svg>
             浏览全部作品
+          </Link>
+          <Link
+            href="/experience"
+            className="bg-white text-black px-6 md:px-8 py-4 md:py-5 rounded-[12px] font-semibold hover:bg-gray-50 transition-colors flex items-center justify-center gap-2 w-full sm:min-w-[194px] text-sm md:text-base border-[3px] border-black hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5"
+          >
+            <Search className="w-5 h-5" />
+            工作经验
           </Link>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import { Mail, Phone } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 export function Footer() {
   return (
@@ -29,24 +30,24 @@ export function Footer() {
               <h3 className="font-bold mb-4">页面</h3>
               <ul className="space-y-2 text-gray-400 text-sm">
                 <li>
-                  <a href="/" className="hover:text-white transition-colors cursor-pointer">
+                  <Link href="/" className="hover:text-white transition-colors cursor-pointer">
                     首页
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/about" className="hover:text-white transition-colors cursor-pointer">
+                  <Link href="/about" className="hover:text-white transition-colors cursor-pointer">
                     关于我
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/portfolio" className="hover:text-white transition-colors cursor-pointer">
+                  <Link href="/portfolio" className="hover:text-white transition-colors cursor-pointer">
                     作品集
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/experience" className="hover:text-white transition-colors cursor-pointer">
+                  <Link href="/experience" className="hover:text-white transition-colors cursor-pointer">
                     工作经验
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

@@ -1,4 +1,6 @@
 import Image from "next/image"
+import Link from "next/link"
+import { Mail } from "lucide-react"
 
 export function AboutSection() {
   return (
@@ -12,10 +14,10 @@ export function AboutSection() {
 
         <div className="space-y-6 md:space-y-8">
           <div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 max-w-[600px]">
               保持探索欲，无限进步！
             </h2>
-            <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+            <p className="text-gray-600 text-base md:text-lg leading-relaxed max-w-[530px]">
               影视飓风是我很喜欢的频道，无限进步是他们的Slogan也是我的，希望能探索到更大的世界！
             </p>
           </div>
@@ -41,6 +43,13 @@ export function AboutSection() {
               </div>
             </div>
           </div>
+
+          <Link href="/contact">
+            <div className="inline-flex items-center justify-center gap-2 bg-[#ffcc32] text-black border-[3px] border-black rounded-lg py-5 px-8 md:py-[22px] md:px-[62px] font-semibold text-base md:text-lg hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5 transition-all cursor-pointer w-full sm:w-auto">
+              <Mail className="w-5 h-5" />
+              联系我
+            </div>
+          </Link>
         </div>
       </div>
     </section>

@@ -20,10 +20,10 @@ export function HeroSection() {
           </p>
 
           <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-7 pt-4">
-            <Link href="/contact">
+            <Link href="/about">
               <Button className="bg-[#0B0B0B] text-white hover:bg-black/90 rounded-lg py-5 px-8 md:py-[22px] md:px-[62px] text-base md:text-lg font-semibold h-auto w-full sm:w-auto sm:min-w-[240px]">
                 <Mail className="w-5 h-5" />
-                联系我
+                关于我
               </Button>
             </Link>
             <Link href="/portfolio">

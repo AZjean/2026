@@ -19,8 +19,8 @@ const onest = Onest({
 })
 
 export const metadata: Metadata = {
-  title: "Paperfolio - Portfolio Landing Page",
-  description: "A playful portfolio landing page",
+  title: "AZJEAN 创意作品集",
+  description: "内容运营 · 摄影摄像 · 创意设计",
   generator: "v0.app",
 }
 
