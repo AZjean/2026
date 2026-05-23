@@ -8,7 +8,7 @@ export function AboutSection() {
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center">
         <div className="flex justify-center">
           <div className="relative w-full max-w-lg aspect-square border-[4px] border-black rounded-full overflow-hidden bg-[#006cad] shadow-[-8px_8px_0px_0px_rgba(0,0,0,1)]">
-            <Image src="/images/about-avatar.png" alt="关于我" fill className="object-cover scale-110" />
+            <Image src="/images/about-avatar.webp" alt="关于我" fill className="object-cover scale-110" />
           </div>
         </div>
 
