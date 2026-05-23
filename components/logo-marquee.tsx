@@ -10,10 +10,10 @@ export function LogoMarquee() {
 
   return (
     <div className="overflow-hidden">
-      <div className="relative overflow-hidden bg-black py-16 -rotate-[5deg] mt-32 mb-16 min-w-[120vw] -mx-[10vw] left-0">
-        <div className="flex items-center gap-16 animate-marquee whitespace-nowrap">
+      <div className="relative overflow-hidden bg-black py-8 md:py-16 -rotate-[2deg] md:-rotate-[5deg] mt-16 md:mt-32 mb-12 md:mb-16">
+        <div className="flex items-center gap-8 md:gap-16 animate-marquee whitespace-nowrap">
           {[...items, ...items, ...items, ...items].map((item, index) => (
-            <span key={index} className="text-white text-5xl font-bold">{item.text}</span>
+            <span key={index} className="text-white text-2xl md:text-5xl font-bold">{item.text}</span>
           ))}
         </div>
       </div>
