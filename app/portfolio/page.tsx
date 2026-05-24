@@ -447,17 +447,22 @@ export default function PortfolioPage() {
                         <div className="relative aspect-[3/4] w-full">
                           {/* 右上角分享按钮 */}
                           <button
-                            onClick={() => {
+                            onClick={(e) => {
+                              e.stopPropagation();
                               if (item.link) {
                                 navigator.clipboard.writeText(item.link);
                                 alert('链接已复制到剪贴板！');
+                                // 也可以同时打开链接
+                                window.open(item.link, '_blank');
                               }
                             }}
                             className="absolute top-3 right-3 w-8 h-8 bg-[#FFCC32] rounded-full flex items-center justify-center border-[2px] border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all z-10 cursor-pointer"
                           >
                             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-                              <path d="M12 19V5"/>
-                              <path d="M5 12l7-7 7 7"/>
+                              <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/>
+                              <line x1="8" y1="12" x2="12" y2="12"/>
+                              <line x1="12" y1="12" x2="12" y2="8"/>
+                              <path d="M12 16l4-4-4-4"/>
                             </svg>
                           </button>
                           {item.link ? (
