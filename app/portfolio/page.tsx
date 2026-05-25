@@ -319,14 +319,14 @@ export default function PortfolioPage() {
                     >
                       <div className="relative aspect-[3/4]">
                         <video
-                          src={vid.src}
                           poster={vid.poster}
                           controls
                           preload="metadata"
                           playsInline
-                          type="video/mp4"
                           className="absolute inset-0 w-full h-full object-cover rounded-[17px]"
-                        />
+                        >
+                          <source src={vid.src} type="video/mp4" />
+                        </video>
                       </div>
                     </div>
                   ))}
@@ -340,14 +340,14 @@ export default function PortfolioPage() {
                   >
                     <div className="relative aspect-[16/9]">
                       <video
-                        src={vid.src}
                         poster={vid.poster}
                         controls
                         preload="metadata"
                         playsInline
-                        type="video/mp4"
                         className="absolute inset-0 w-full h-full object-cover rounded-[17px]"
-                      />
+                      >
+                        <source src={vid.src} type="video/mp4" />
+                      </video>
                     </div>
                   </div>
                 ))}
@@ -367,14 +367,14 @@ export default function PortfolioPage() {
                     >
                       <div className="relative aspect-[3/4]">
                         <video
-                          src={vid.src}
                           poster={vid.poster}
                           controls
                           preload="metadata"
                           playsInline
-                          type="video/mp4"
                           className="absolute inset-0 w-full h-full object-cover rounded-[17px]"
-                        />
+                        >
+                          <source src={vid.src} type="video/mp4" />
+                        </video>
                       </div>
                     </div>
                   ))}
@@ -560,14 +560,14 @@ export default function PortfolioPage() {
                     style={{ aspectRatio: vid.aspectRatio }}
                   >
                     <video
-                      src={vid.src}
                       poster={vid.poster}
                       controls
                       preload="metadata"
                       playsInline
-                      type="video/mp4"
                       className="absolute inset-0 w-full h-full object-cover rounded-[17px]"
-                    />
+                    >
+                      <source src={vid.src} type="video/mp4" />
+                    </video>
                   </div>
                 ))}
                 {/* Portrait videos (13-16) in 2-up rows */}
@@ -586,14 +586,14 @@ export default function PortfolioPage() {
                           style={{ aspectRatio: vid.aspectRatio }}
                         >
                           <video
-                            src={vid.src}
                             poster={vid.poster}
                             controls
                             preload="metadata"
                             playsInline
-                            type="video/mp4"
                             className="absolute inset-0 w-full h-full object-cover rounded-[17px]"
-                          />
+                          >
+                            <source src={vid.src} type="video/mp4" />
+                          </video>
                         </div>
                       ))}
                     </div>
