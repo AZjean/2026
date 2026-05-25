@@ -322,8 +322,9 @@ export default function PortfolioPage() {
                           src={vid.src}
                           poster={vid.poster}
                           controls
-                          preload="none"
+                          preload="metadata"
                           playsInline
+                          type="video/mp4"
                           className="absolute inset-0 w-full h-full object-cover rounded-[17px]"
                         />
                       </div>
@@ -342,8 +343,9 @@ export default function PortfolioPage() {
                         src={vid.src}
                         poster={vid.poster}
                         controls
-                        preload="none"
+                        preload="metadata"
                         playsInline
+                        type="video/mp4"
                         className="absolute inset-0 w-full h-full object-cover rounded-[17px]"
                       />
                     </div>
@@ -368,8 +370,9 @@ export default function PortfolioPage() {
                           src={vid.src}
                           poster={vid.poster}
                           controls
-                          preload="none"
+                          preload="metadata"
                           playsInline
+                          type="video/mp4"
                           className="absolute inset-0 w-full h-full object-cover rounded-[17px]"
                         />
                       </div>
@@ -560,8 +563,9 @@ export default function PortfolioPage() {
                       src={vid.src}
                       poster={vid.poster}
                       controls
-                      preload="none"
+                      preload="metadata"
                       playsInline
+                      type="video/mp4"
                       className="absolute inset-0 w-full h-full object-cover rounded-[17px]"
                     />
                   </div>
@@ -585,8 +589,9 @@ export default function PortfolioPage() {
                             src={vid.src}
                             poster={vid.poster}
                             controls
-                            preload="none"
+                            preload="metadata"
                             playsInline
+                            type="video/mp4"
                             className="absolute inset-0 w-full h-full object-cover rounded-[17px]"
                           />
                         </div>
