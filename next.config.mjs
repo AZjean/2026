@@ -4,14 +4,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    formats: ["image/avif", "image/webp"],
-    remotePatterns: [
-      {
-        protocol: "http",
-        hostname: "localhost",
-        port: "3000",
-      },
-    ],
+    unoptimized: true,
   },
   eslint: {
     ignoreDuringBuilds: true,
