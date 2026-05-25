@@ -199,7 +199,7 @@ export function PortfolioSection() {
           </Link>
           <Link
             href="/experience"
-            className="bg-white text-black px-6 md:px-8 py-4 md:py-5 rounded-[12px] font-semibold hover:bg-gray-50 transition-colors flex items-center justify-center gap-2 w-full sm:min-w-[194px] text-sm md:text-base border-[3px] border-black hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5"
+            className="bg-white text-black px-6 md:px-8 py-4 md:py-5 rounded-[12px] font-semibold hover:bg-gray-50 transition-colors flex items-center justify-center gap-2 w-[194px] text-sm md:text-base border-[3px] border-black hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5"
           >
             <Search className="w-5 h-5" />
             工作经验
