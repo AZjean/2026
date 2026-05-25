@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
+import Image from "next/image"
 import { Mail, Phone, MapPin, MessageCircle, Send } from "lucide-react"
 
 export default function ContactPage() {
@@ -68,10 +69,12 @@ export default function ContactPage() {
               无论您是品牌方还是新媒体探索者或者同行，只要有内容创作需求，欢迎随时联系我沟通想法！
             </p>
             <div className="inline-block bg-white border-[3px] border-black rounded-2xl p-4 shadow-[4px_4px_0px_0px_#000]">
-              <img
+              <Image
                 src="/images/qr/wechat-qr.jpg"
                 alt="微信二维码"
-                className="w-48 h-48 object-contain"
+                width={192}
+                height={192}
+                className="object-contain"
               />
               <p className="text-sm font-bold text-gray-500 mt-2">微信扫码联系</p>
             </div>

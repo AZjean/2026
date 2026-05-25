@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import Link from "next/link"
+import Image from "next/image"
 import { Briefcase, Calendar, GraduationCap, Award, Rocket, Camera, Clapperboard, Video, Package, Gamepad2, MapPin, Zap, Dog } from "lucide-react"
 
 export default function AboutPage() {
@@ -38,11 +39,12 @@ export default function AboutPage() {
               </div>
 
               <div className="p-6">
-                <div className="rounded-xl border-2 border-black overflow-hidden bg-white shadow-[4px_4px_0px_0px_#000] mb-3 max-w-[220px] mx-auto">
-                  <img
-                    src="/images/about-photo.png"
+                <div className="rounded-xl border-2 border-black overflow-hidden bg-white shadow-[4px_4px_0px_0px_#000] mb-3 max-w-[220px] mx-auto relative aspect-[3/4]">
+                  <Image
+                    src="/images/about-photo.webp"
                     alt="朱艳"
-                    className="w-full h-auto object-cover"
+                    fill
+                    className="object-cover"
                   />
                 </div>
 
@@ -146,10 +148,12 @@ export default function AboutPage() {
                     key={skill.name}
                     className="bg-white border-2 border-black rounded-xl p-3 flex flex-col items-center justify-center hover:shadow-[4px_4px_0px_0px_#000] transition-shadow"
                   >
-                    <img
+                    <Image
                       src={`/images/skills/${skill.file}`}
                       alt={skill.name}
-                      className="w-12 h-12 object-contain mb-2"
+                      width={48}
+                      height={48}
+                      className="object-contain mb-2"
                     />
                     <span className="text-sm font-bold">{skill.name}</span>
                   </div>

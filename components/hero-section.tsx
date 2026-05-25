@@ -1,6 +1,7 @@
 import { Mail, FolderOpen } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import Image from "next/image"
 
 export function HeroSection() {
   return (
@@ -40,10 +41,12 @@ export function HeroSection() {
 
         <div className="flex justify-center md:justify-end">
           <div className="relative w-full max-w-md aspect-square bg-[#006cad] border-4 border-black rounded-3xl overflow-hidden shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-            <img
-              src="/images/avatar.png"
+            <Image
+              src="/images/avatar.webp"
               alt="个人形象"
-              className="w-full h-full object-cover"
+              fill
+              className="object-cover"
+              priority
             />
           </div>
         </div>

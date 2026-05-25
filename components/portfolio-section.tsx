@@ -10,7 +10,7 @@ const categories = [
     tag: "视频",
     icon: Video,
     color: "#f5673c",
-    image: "/images/portfolio/portrait/slide-12-img-01.png",
+    image: "/images/portfolio/portrait/slide-12-img-01.jpg",
   },
   {
     title: "内容项目",
@@ -19,7 +19,7 @@ const categories = [
     tag: "运营",
     icon: Briefcase,
     color: "#5B9BD5",
-    image: "/images/portfolio/content/slide-27-img-00.png",
+    image: "/images/portfolio/content/slide-27-img-00.webp",
   },
   {
     title: "工作之外",
