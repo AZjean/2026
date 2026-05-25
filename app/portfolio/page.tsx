@@ -3,12 +3,13 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import Image from "next/image"
+import { LazyVideo } from "@/components/lazy-video"
 import {
   Video,
   Sunset,
   Briefcase,
 } from "lucide-react"
-import { useState, useEffect, useRef } from "react"
+import { useState } from "react"
 
 const categories = [
   {
@@ -250,83 +251,6 @@ const meiqiuqiuSection = {
 // 所有板块汇总（用于渲染）
 const allContentSections = [dtmoonSection, aiPetSection, meiqiuqiuSection]
 
-function OptimizedVideo({ src, poster, alt, className = "", aspectRatio = "3/4" }: {
-  src: string
-  poster: string
-  alt: string
-  className?: string
-  aspectRatio?: string
-}) {
-  const [isPlaying, setIsPlaying] = useState(false)
-  const [isLoaded, setIsLoaded] = useState(false)
-  const videoRef = useRef<HTMLVideoElement>(null)
-  const observerRef = useRef<IntersectionObserver | null>(null)
-
-  useEffect(() => {
-    const video = videoRef.current
-    if (!video) return
-
-    observerRef.current = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !isLoaded) {
-            setIsLoaded(true)
-            video.load()
-            observerRef.current?.disconnect()
-          }
-        })
-      },
-      { threshold: 0.1, rootMargin: "100px" }
-    )
-
-    observerRef.current.observe(video)
-
-    return () => {
-      observerRef.current?.disconnect()
-    }
-  }, [isLoaded])
-
-  const handlePlay = () => {
-    if (videoRef.current) {
-      videoRef.current.play()
-      setIsPlaying(true)
-    }
-  }
-
-  return (
-    <div className={`relative overflow-hidden ${className}`} style={{ aspectRatio }}>
-      <video
-        ref={videoRef}
-        poster={poster}
-        controls
-        preload="metadata"
-        playsInline
-        muted={!isPlaying}
-        onClick={() => !isPlaying && handlePlay()}
-        className="absolute inset-0 w-full h-full object-cover rounded-[17px] cursor-pointer"
-      >
-        <source src={src} type="video/mp4" />
-      </video>
-      
-      {!isPlaying && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black/30 cursor-pointer rounded-[17px]">
-          <button
-            onClick={(e) => {
-              e.stopPropagation()
-              handlePlay()
-            }}
-            className="w-16 h-16 md:w-20 md:h-20 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all border-[3px] border-black"
-          >
-            <svg className="w-8 h-8 md:w-10 md:h-10 text-black ml-1" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M8 5v14l11-7z"/>
-            </svg>
-          </button>
-        </div>
-      )}
-    </div>
-  )
-}
-
 export default function PortfolioPage() {
   const [activeTab, setActiveTab] = useState("video")
 
@@ -394,12 +318,14 @@ export default function PortfolioPage() {
                       key={index}
                       className="group relative overflow-hidden border-[3px] border-black rounded-[20px] bg-black hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all"
                     >
-                      <OptimizedVideo
-                        src={vid.src}
-                        poster={vid.poster}
-                        alt={vid.alt}
-                        aspectRatio="3/4"
-                      />
+                      <div className="relative aspect-[3/4]">
+                        <LazyVideo
+                          src={vid.src}
+                          poster={vid.poster}
+                          alt={vid.alt}
+                          className="rounded-[17px]"
+                        />
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -410,12 +336,14 @@ export default function PortfolioPage() {
                     key={`fw-${index}`}
                     className="mt-6 group relative overflow-hidden border-[3px] border-black rounded-[20px] bg-black hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all"
                   >
-                    <OptimizedVideo
-                      src={vid.src}
-                      poster={vid.poster}
-                      alt={vid.alt}
-                      aspectRatio="16/9"
-                    />
+                    <div className="relative aspect-[16/9]">
+                      <LazyVideo
+                        src={vid.src}
+                        poster={vid.poster}
+                        alt={vid.alt}
+                        className="rounded-[17px]"
+                      />
+                    </div>
                   </div>
                 ))}
               </div>
@@ -432,12 +360,14 @@ export default function PortfolioPage() {
                       key={index}
                       className="group relative overflow-hidden border-[3px] border-black rounded-[20px] bg-black hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all"
                     >
-                      <OptimizedVideo
-                        src={vid.src}
-                        poster={vid.poster}
-                        alt={vid.alt}
-                        aspectRatio="3/4"
-                      />
+                      <div className="relative aspect-[3/4]">
+                        <LazyVideo
+                          src={vid.src}
+                          poster={vid.poster}
+                          alt={vid.alt}
+                          className="rounded-[17px]"
+                        />
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -616,18 +546,19 @@ export default function PortfolioPage() {
                 ))}
                 {/* Full-width videos (11, 12) */}
                 {lifeVideos.filter(v => v.fullWidth).map((vid, index) => (
-                  <div
-                    key={`video-fw-${index}`}
-                    className="group relative overflow-hidden border-[3px] border-black rounded-[20px] bg-black hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all sm:col-span-2 lg:col-span-3"
-                  >
-                    <OptimizedVideo
-                      src={vid.src}
-                      poster={vid.poster}
-                      alt={vid.alt}
-                      aspectRatio={vid.aspectRatio}
-                    />
-                  </div>
-                ))}
+                    <div
+                      key={`video-fw-${index}`}
+                      className="group relative overflow-hidden border-[3px] border-black rounded-[20px] bg-black hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all sm:col-span-2 lg:col-span-3"
+                      style={{ aspectRatio: vid.aspectRatio }}
+                    >
+                      <LazyVideo
+                        src={vid.src}
+                        poster={vid.poster}
+                        alt={vid.alt}
+                        className="rounded-[17px]"
+                      />
+                    </div>
+                  ))}
                 {/* Portrait videos (13-16) in 2-up rows */}
                 {(() => {
                   const portraitVids = lifeVideos.filter(v => !v.fullWidth)
@@ -641,12 +572,13 @@ export default function PortfolioPage() {
                         <div
                           key={`video-portrait-${rowIndex}-${vidIndex}`}
                           className="group relative overflow-hidden border-[3px] border-black rounded-[20px] bg-black hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all"
+                          style={{ aspectRatio: vid.aspectRatio }}
                         >
-                          <OptimizedVideo
+                          <LazyVideo
                             src={vid.src}
                             poster={vid.poster}
                             alt={vid.alt}
-                            aspectRatio={vid.aspectRatio}
+                            className="rounded-[17px]"
                           />
                         </div>
                       ))}
